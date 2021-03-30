@@ -1,10 +1,18 @@
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import React from 'react';
+import { Container, Row } from 'react-bootstrap';
+import Navbar from '../src/components/NavbarPro';
+import Sidebar from '../src/components/Sidebar';
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+    <>
+      <Navbar />
+
+      <Container fluid>
+        <Row>
+          <Sidebar />
+        </Row>
+      </Container>
+    </>
+  );
 }

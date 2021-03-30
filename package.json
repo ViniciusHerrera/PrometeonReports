@@ -7,10 +7,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "next": "latest",
     "react": "^16.8.0",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^16.8.0",
+    "react-icons": "^4.2.0",
     "react-is": "^16.8.0",
+    "sass": "^1.32.8",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
