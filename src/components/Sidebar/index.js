@@ -67,21 +67,21 @@ export default function Sidebar(){
       <Sticky className="pt-3">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className="nav-link active" href="">
+            <a className="nav-link active" href="#">
               <FiHome className="icon" size={iconSize}/>
               Home
             </a>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="#">
               <FiDatabase className="icon" size={iconSize}/>
               Data Collection
             </a>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="#">
               <FiPieChart className="icon" size={iconSize}/>
               Força e Geometria
               <FiChevronDown id="chevron" className="icon" size={iconSize} />
@@ -99,21 +99,21 @@ export default function Sidebar(){
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="#">
               <FiBarChart2 className="icon" size={iconSize}/>
               Primeiro Controle
             </a>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="#">
               <FiTrendingUp className="icon" size={iconSize}/>
               Controle de Peso
             </a>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link" href="#">
               <FiLayers className="icon" size={iconSize}/>
               Raio X
             </a>

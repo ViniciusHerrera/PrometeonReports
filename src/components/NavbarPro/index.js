@@ -1,74 +1,70 @@
 import styled from 'styled-components';
-
 import { Navbar } from 'react-bootstrap';
 import { FiMenu } from 'react-icons/fi';
 
 const NavPro = styled(Navbar)`
-  display: flex;
   justify-content: start;
-  align-items: center;
-  flex-wrap: nowrap;
-
-  position: sticky;
-  top: 0;
-  z-index: 1020;
-  padding: 0;
-
   min-width: 250px;
-  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
-
   background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.secondary};
+
+  .navbar-brand {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .brand-image {
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-style: none;
+
+    height: 40px;
+  }
 `;
 
-const ButtonPro = styled.a`
-  margin-left: 0.5rem;
-  padding: 0.25rem 0.25rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: none;
+const Button = styled.button`
+  display: inline-flex;
 
-  cursor: pointer;
-`;
-
-const LogoLink = styled.a`
-  flex-direction: column;
-  display: inline-block;
-
-  align-items: center;
-
-  margin: 0;
-  padding: 0 0.25rem;
-`;
-
-const Image = styled.img`
-  box-sizing: border-box;
+  text-align: center;
   vertical-align: middle;
-  border-style: none;
 
-  height: 40px;
+  padding: 0.25rem;
+  background-color: transparent;
+  
+  border: none;
+  border-radius: 0.25rem;
 
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.light_primary};
+    border-color: transparent;
+  }
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.dark_primary};
+    box-shadow: none;
+    border-color: transparent;
+  }
 `;
 
 export default function NavbarPro(){
   return (
-    <NavPro>
-      <ButtonPro>
+    <NavPro className="navbar-dark sticky-top flex-md-flex-nowrap p-0 shadow">
+      <Button 
+        type="button"
+        variant="primary"
+        size="sm"
+        className="ml-2"
+      >
         <FiMenu size={24} color="#FFF" />
-      </ButtonPro>
+      </Button>
 
-      <LogoLink href="">
-
-        <Image 
-          src="/images/logo/proWhiteLogo.png" 
-          alt="Prometeon" 
-          loading="lazy" 
-        /> 
-      
-      </LogoLink>
+      <NavPro.Brand href="#">
+        <img 
+          src="/images/logo/proWhiteLogo.png"
+          alt="Prometeon"
+          loading="lazy"
+          className="brand-image"
+        />
+      </NavPro.Brand>
     </NavPro>
   );
 };
