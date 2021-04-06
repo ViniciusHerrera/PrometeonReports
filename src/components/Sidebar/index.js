@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Nav } from 'react-bootstrap';
+import { Collapse } from 'reactstrap';
 import { FiHome, FiDatabase, FiPieChart, FiBarChart2
   , FiTrendingUp, FiLayers, FiChevronDown } from 'react-icons/fi'
 
@@ -15,6 +16,9 @@ const Side = styled(Nav)`
   min-width: max-content;
 
   .nav-link {
+    display: inline-flex;
+    align-items: center;
+
     font-weight: 500;
     color: #333;
     white-space: nowrap;
@@ -27,6 +31,15 @@ const Side = styled(Nav)`
 
   .nav-link #chevron {
     margin-left: 8px;
+    transition: .3s transform ease-in-out;
+
+    &[data-status="false"] {
+      transform: rotate(0deg);
+    }
+    
+    &[data-status="true"] {
+      transform: rotate(-180deg);
+    }
   }
 
   .nav-link.active {
@@ -59,9 +72,9 @@ const Sticky = styled.div`
 `;
 
 export default function Sidebar(){
-  const [isOpened, setOpenState] = useState(false); 
+  const [isOpen, setOpenState] = useState(false); 
   const iconSize = 18;
-
+  
   return (
     <Side className="bg-light">
       <Sticky className="pt-3">
@@ -81,21 +94,28 @@ export default function Sidebar(){
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="#" onClick={() => setOpenState(!isOpen)}>
               <FiPieChart className="icon" size={iconSize}/>
               Força e Geometria
-              <FiChevronDown id="chevron" className="icon" size={iconSize} />
+              <FiChevronDown 
+                id="chevron"
+                className="icon"
+                size={iconSize}
+                data-status={isOpen}
+              />
             </a>
 
-            <ul className="sidebar-dropdown list-unstyled collapse ml-4">
-              <li className="nav-item">
-                <a className="nav-link" href="#">UPGR</a>
-              </li>
+            <Collapse isOpen={isOpen}>
+              <ul className="sidebar-dropdown list-unstyled ml-4">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">UPGR</a>
+                </li>
 
-              <li className="nav-item">
-                <a className="nav-link" href="#">UPGR</a>
-              </li>
-            </ul>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">UPOC</a>
+                </li>
+              </ul>
+            </Collapse>
           </li>
 
           <li className="nav-item">

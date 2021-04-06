@@ -29,7 +29,7 @@ const Button = styled.button`
 
   padding: 0.25rem;
   background-color: transparent;
-  
+
   border: none;
   border-radius: 0.25rem;
 
@@ -48,12 +48,7 @@ const Button = styled.button`
 export default function NavbarPro(){
   return (
     <NavPro className="navbar-dark sticky-top flex-md-flex-nowrap p-0 shadow">
-      <Button 
-        type="button"
-        variant="primary"
-        size="sm"
-        className="ml-2"
-      >
+      <Button type="button" className="ml-2">
         <FiMenu size={24} color="#FFF" />
       </Button>
 
