@@ -71,12 +71,12 @@ const Sticky = styled.div`
   }
 `;
 
-export default function Sidebar(){
+export default function Sidebar(props){
   const [isOpen, setOpenState] = useState(false); 
   const iconSize = 18;
   
   return (
-    <Side className="bg-light">
+    <Side className={`bg-light ${props.className}`}>
       <Sticky className="pt-3">
         <ul className="nav flex-column">
           <li className="nav-item">
