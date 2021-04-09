@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { Nav } from 'react-bootstrap';
 import { Collapse } from 'reactstrap';
+import Link from '../Link';
 import { FiHome, FiDatabase, FiPieChart, FiBarChart2
   , FiTrendingUp, FiLayers, FiChevronDown } from 'react-icons/fi'
 
@@ -71,30 +72,30 @@ const Sticky = styled.div`
   }
 `;
 
-export default function Sidebar(props){
+export default function Sidebar({ className, ...props}){
   const [isOpen, setOpenState] = useState(false); 
   const iconSize = 18;
   
   return (
-    <Side className={`bg-light ${props.className}`}>
+    <Side className={`bg-light ${className}`} {...props}>
       <Sticky className="pt-3">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className="nav-link active" href="#">
+            <Link href="/" className="nav-link" >
               <FiHome className="icon" size={iconSize}/>
               Home
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link href="/tables/data-collection" className="nav-link">
               <FiDatabase className="icon" size={iconSize}/>
               Data Collection
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#" onClick={() => setOpenState(!isOpen)}>
+            <Link className="nav-link" href="#" onClick={() => setOpenState(!isOpen)}>
               <FiPieChart className="icon" size={iconSize}/>
               Força e Geometria
               <FiChevronDown 
@@ -103,40 +104,40 @@ export default function Sidebar(props){
                 size={iconSize}
                 data-status={isOpen}
               />
-            </a>
+            </Link>
 
             <Collapse isOpen={isOpen}>
               <ul className="sidebar-dropdown list-unstyled ml-4">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">UPGR</a>
+                  <Link className="nav-link" href="#">UPGR</Link>
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">UPOC</a>
+                  <Link className="nav-link" href="#">UPOC</Link>
                 </li>
               </ul>
             </Collapse>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" href="#">
               <FiBarChart2 className="icon" size={iconSize}/>
               Primeiro Controle
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" href="#">
               <FiTrendingUp className="icon" size={iconSize}/>
               Controle de Peso
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" href="#">
               <FiLayers className="icon" size={iconSize}/>
               Raio X
-            </a>
+            </Link>
           </li>
         </ul>
       </Sticky>

@@ -6,38 +6,30 @@ const NavPro = styled(Navbar)`
   justify-content: start;
   min-width: 250px;
   background-color: ${({ theme }) => theme.colors.primary};
-
   .navbar-brand {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
   }
-
   .brand-image {
     box-sizing: border-box;
     vertical-align: middle;
     border-style: none;
-
     height: 40px;
   }
 `;
 
 const Button = styled.button`
   display: inline-flex;
-
   text-align: center;
   vertical-align: middle;
-
   padding: 0.25rem;
   background-color: transparent;
-
   border: none;
   border-radius: 0.25rem;
-
   &:hover {
     background-color: ${({ theme }) => theme.colors.light_primary};
     border-color: transparent;
   }
-
   &:active {
     background-color: ${({ theme }) => theme.colors.dark_primary};
     box-shadow: none;
